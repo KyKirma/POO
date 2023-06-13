@@ -1,4 +1,4 @@
-package EX1;
+package src.EX1;
 
 class Cliente {
 	
@@ -34,7 +34,7 @@ class Cliente {
 	}
 	
 	boolean validaCPF() {
-		if(cpf.length() == 13) {
+		if(cpf.length() == 11) {
 			System.out.println("CPF válido.");
 			return true;
 		} else {

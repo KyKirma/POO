@@ -1,4 +1,4 @@
-package Default;
+package src.Default;
 
 public class main {
 

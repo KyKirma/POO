@@ -1,4 +1,4 @@
-package EX1;
+package src.EX1;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -10,47 +10,29 @@ class Banco {
 		Cliente pessoa = new Cliente();
 		
 		cadastro(pessoa);
-		int choice = 0;
+
+		System.out.printf("-=-=-=-=-=Banco IFTM=-=-=-=-=-\n"
+		+ "Ola, %s!\n"
+		+ "Verificando a situação do seu cadastro...\n\n", pessoa.getNome());
 		
-		do {
-			System.out.printf("-=-=-=-=-=Banco IFTM=-=-=-=-=-\n"
-					+ "Ola, %s!\n"
-					+ "Selecione sua opção.\n\n"
-					+ "[1] - Verificar situação do Cadastro\n"
-					+ "[2] - Sair do programa\n"
-					+ "Opção: ", pessoa.getNome());
-			
-			choice = sc.nextInt();
-			switch (choice) {
-				case 1:
-					pessoa.validaCPF();
-					break;
-				case 2:
-					System.out.println("Até mais!");
-					break;
-				default:
-					System.out.println("Opção inválida, tente novamente.");
-					break;
-			}
-		} while (choice != 3);
-		
+		pessoa.validaCPF();
 		sc.close();
 	}
 
 	private void cadastro(Cliente pessoa) {
-		Scanner sc1= new Scanner(System.in);
-		
+		Scanner sc = new Scanner(System.in);
+
 		System.out.print("Insira seu nome: ");
-		pessoa.setNome(sc1.nextLine());
+		pessoa.setNome(sc.nextLine());
 		System.out.print("Insira seu endereço: ");
-		pessoa.setEndereco(sc1.nextLine());
+		pessoa.setEndereco(sc.nextLine());
 		System.out.print("Insira seu CPF: ");
-		pessoa.setCpf(sc1.nextLine());
+		pessoa.setCpf(sc.nextLine());
 		System.out.print("Insira sua idade: ");
-		pessoa.setIdade(sc1.nextInt());
+		pessoa.setIdade(sc.nextInt());
 		
 		System.out.println("Cadastro concluido com sucesso.\n");
-		sc1.close();
+		sc.close();
 	}
 }
 
