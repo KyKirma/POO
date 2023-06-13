@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Sistema {
 
-	protected void show() {
+	public void show() {
 		Locale.setDefault(new Locale("pt", "BR"));
 		Scanner sc = new Scanner(System.in);
 		
@@ -34,7 +34,7 @@ public class Sistema {
 				default:
 					System.out.println("Opção inválida, tente novamente.");
 					break;
-					
+	
 			}
 		} while (choice != 3);
 		
