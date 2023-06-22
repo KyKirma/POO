@@ -1,4 +1,4 @@
-public class reptil extends animal{
+public abstract class reptil extends animal{
     
     protected String corEscama;
 }

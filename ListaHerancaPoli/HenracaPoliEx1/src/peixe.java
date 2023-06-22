@@ -1,4 +1,4 @@
-public class peixe extends animal{
+public abstract class peixe extends animal{
     
     protected String corEscama;
 
