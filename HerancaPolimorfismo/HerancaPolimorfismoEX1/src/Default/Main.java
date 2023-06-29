@@ -1,11 +1,10 @@
+package Default;
 //Autor: Pedro Kourly
-//Lista: Encapsulamento
-//EX: 3
+//Lista: Herança e Polimorfismo
+//Ex: 1
 public class Main {
-
 	public static void main(String[] args) {
-		Mercado tela = new Mercado();
+		ZOO tela = new ZOO();
 		tela.show();
 	}
-
 }

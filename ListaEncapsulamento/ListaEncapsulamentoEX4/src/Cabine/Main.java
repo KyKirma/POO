@@ -1,11 +1,11 @@
+package Cabine;
 //Autor: Pedro Kourly
 //Lista: Encapsulamento
-//EX: 3
+//EX: 4
 public class Main {
 
 	public static void main(String[] args) {
-		Mercado tela = new Mercado();
+		Cabine tela = new Cabine();
 		tela.show();
 	}
-
 }
