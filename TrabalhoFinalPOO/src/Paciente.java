@@ -1,5 +1,3 @@
-import java.io.CharConversionException;
-
 public class Paciente extends Pessoa{
 
     protected Boolean convenio = false;
@@ -13,4 +11,13 @@ public class Paciente extends Pessoa{
         this.convenio = convenio;
     }
 
+    public Boolean getConvenio() {
+        return convenio;
+    }
+
+    public void setConvenio(Boolean convenio) {
+        this.convenio = convenio;
+    }
+
+    
 }

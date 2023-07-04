@@ -38,23 +38,46 @@ public class ProgramaVacina {
 
         System.out.print("Tipo Sanguíneo: ");
         String tipoSanguineo = sc.nextLine();
-
+        tipoSanguineo = confTipoSanguineo(tipoSanguineo);
+        
         System.out.print("Alergia: ");
         String alergia = sc.nextLine();
 
         System.out.print("Tem convenio? (S/N): ");
-        Boolean convenio;
+        Boolean convenio = false;
         String choice = sc.nextLine();
-        if(choice == "S" || choice == "s"){
+
+        if(choice.equals("S") || choice.equals("s")){
             convenio = true;
-        } else {
-            convenio = false;
         }
 
         Paciente usuario = new Paciente(nome, endereco, idade, tipoSanguineo, alergia, convenio);
         usuarios.add(usuario);
 
         System.out.println("Usuário cadastrado com sucesso!\n");
+    }
+
+    public void removerUsuario(){
+        System.out.println("----- Cancelamento de Usuário -----");
+
+        System.out.print("Nome do Paciente: ");
+        String nomeUsuario = sc.nextLine();
+
+        Paciente usuario = null;
+        for (Paciente u : usuarios) {
+            if (u.getNome().equals(nomeUsuario)) {
+                usuario = u;
+                break;
+            }
+        }
+
+        if (usuario == null) {
+            System.out.println("Paciente não encontrado.\n");
+            return;
+        }
+
+        usuarios.remove(usuario);
+        System.out.println("Cadastrado cancelado com sucesso!\n");
     }
 
     public void agendarVacina() {
@@ -111,6 +134,7 @@ public class ProgramaVacina {
             System.out.println("Idade: " + usuario.getIdade());
             System.out.println("Tipo Sanguíneo: " + usuario.getTipoSanguineo());
             System.out.println("Alergia: " + usuario.getAlergia());
+            System.out.println("Convenio: " + usuario.getConvenio());
             System.out.println("---------------------------");
         }
         System.out.println();
@@ -131,13 +155,14 @@ public class ProgramaVacina {
     public void executar() {
         int opcao = 0;
 
-        while (opcao != 5) {
+        while (opcao != 6) {
             System.out.println("----- Programa de Gestão de Agendamento de Vacina -----");
             System.out.println("1. Cadastrar Paciente");
             System.out.println("2. Agendar Vacina");
             System.out.println("3. Listar Pacientes Cadastrados");
             System.out.println("4. Listar Agendamentos de Vacina");
-            System.out.println("5. Sair");
+            System.out.println("5. Cancelar Cadastro");
+            System.out.println("6. Sair");
             System.out.print("Selecione uma opção: ");
             opcao = Integer.parseInt(sc.nextLine());
 
@@ -155,6 +180,9 @@ public class ProgramaVacina {
                     listarAgendamentos();
                     break;
                 case 5:
+                    removerUsuario();
+                    break;
+                case 6:
                     System.out.println("Encerrando o programa...");
                     break;
                 default:
@@ -163,4 +191,33 @@ public class ProgramaVacina {
             }
         }
     }
+
+    public String confTipoSanguineo(String tipo) {
+        String tipoSanguineoPadrao = tipo.toUpperCase();
+        
+        switch (tipoSanguineoPadrao) {
+            case "A":
+            case "A+":
+            case "A-":
+                return "A";
+            
+            case "B":
+            case "B+":
+            case "B-":
+                return "B";
+            
+            case "AB":
+            case "AB+":
+            case "AB-":
+                return "AB";
+            
+            case "O":
+            case "O+":
+            case "O-":
+                return "O";
+            
+            default:
+                return "Desconhecido";
+    }
+}
 }

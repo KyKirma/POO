@@ -24,4 +24,7 @@ public class Pessoa {
     public String getAlergia() {
         return alergia;
     }
+
+    
+
 }

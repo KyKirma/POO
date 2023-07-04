@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "ListaEncapsulamento-Ex2",
         "ListaEncapsulamento",
-        "ProjetoVacina"
+        "TrabalhoFinalPOO"
     ]
 }
