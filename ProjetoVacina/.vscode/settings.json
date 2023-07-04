@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": [
+        "src/projetovacina"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+}
