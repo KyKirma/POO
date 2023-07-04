@@ -129,13 +129,7 @@ public class ProgramaVacina {
     public void listarUsuariosCadastrados() {
         System.out.println("----- Pacientes Cadastrados -----");
         for (Paciente usuario : usuarios) {
-            System.out.println("Nome: " + usuario.getNome());
-            System.out.println("Endereço: " + usuario.getEndereco());
-            System.out.println("Idade: " + usuario.getIdade());
-            System.out.println("Tipo Sanguíneo: " + usuario.getTipoSanguineo());
-            System.out.println("Alergia: " + usuario.getAlergia());
-            System.out.println("Convenio: " + usuario.getConvenio());
-            System.out.println("---------------------------");
+            usuario.Info(usuario);
         }
         System.out.println();
     }

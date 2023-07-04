@@ -19,5 +19,16 @@ public class Paciente extends Pessoa{
         this.convenio = convenio;
     }
 
+    @Override
+    public void Info(Pessoa usuario) {
+        System.out.println("Nome: " + usuario.getNome());
+        System.out.println("Endereço: " + usuario.getEndereco());
+        System.out.println("Idade: " + usuario.getIdade());
+        System.out.println("Tipo Sanguíneo: " + usuario.getTipoSanguineo());
+        System.out.println("Alergia: " + usuario.getAlergia());
+        System.out.println("Convenio: " + ((Paciente) usuario).getConvenio());
+        System.out.println("---------------------------");
+    }
+
     
 }

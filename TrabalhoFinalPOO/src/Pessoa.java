@@ -1,4 +1,5 @@
-public class Pessoa {
+public abstract class Pessoa {
+
     protected String nome;
     protected String endereco;
     protected int idade;
@@ -25,6 +26,13 @@ public class Pessoa {
         return alergia;
     }
 
-    
+    public void Info(Pessoa usuario){
+        System.out.println("Nome: " + usuario.getNome());
+        System.out.println("Endereço: " + usuario.getEndereco());
+        System.out.println("Idade: " + usuario.getIdade());
+        System.out.println("Tipo Sanguíneo: " + usuario.getTipoSanguineo());
+        System.out.println("Alergia: " + usuario.getAlergia());
+        System.out.println("---------------------------");
+    }
 
 }
